@@ -1,0 +1,30 @@
+# Latexmk script for generating FIDATA Documentation
+# Copyright (C) 2014  Basil Peace
+#
+# This file is part of FIDATA Documentation.
+#
+# FIDATA Documentation is free software: you can redistribute it and/or
+# modify it under the terms of the GNU General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
+#
+# FIDATA Documentation is distributed in the hope that it will be
+# useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+# of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with FIDATA Documentation.  If not, see
+# <http://www.gnu.org/licenses/>.
+
+# The following external artifacts should be placed in this directory
+# before build:
+# 	fidata-report-template.cls
+# 	fonts subdirectory
+$pdflatex = "lualatex %O %S";
+$pdf_mode = 1; $postscript_mode = $dvi_mode = 0;
+$bibtex_use = 1;
+# TODO: make explicit list of files
+# 1.	Some images may happen to be converted in *.pdf
+# 2.	License should be included into documentation
+@default_files = ("*.tex");
